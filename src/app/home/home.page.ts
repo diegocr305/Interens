@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -9,5 +10,8 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class HomePage {
-  constructor() {}
+  userInfo: any | undefined;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.userInfo = this.router.getCurrentNavigation()?.extras.state?.['user'];
+  }
 }

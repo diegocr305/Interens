@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-label position="floating">Email</ion-label>
+  <ion-item>
+    <ion-input type = "text" [(ngModel)]="user.usuario"></ion-input>
+  </ion-item>
+  <ion-label position="floating">Password</ion-label>
+  <ion-item>
+    <ion-input type = "password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+  <ion-button color="success" (click)="ingresar()">Login</ion-button>
+  <ion-item>
+    <a href="/recuperar-contrasena">olvide mi contraseña</a>
+  </ion-item>
+</ion-content>

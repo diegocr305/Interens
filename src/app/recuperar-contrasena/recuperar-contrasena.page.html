@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>recuperarContrasena</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-label position="floating">Email</ion-label>
+  <ion-item>
+    <ion-input type = "text" [(ngModel)]="user.usuario"></ion-input>
+  </ion-item>
+  <ion-label position="floating">Nueva Password</ion-label>
+  <ion-item>
+    <ion-input type = "password" [(ngModel)]="user.newPassword"></ion-input>
+  </ion-item>
+  <ion-button color="success" (click)="recuperarContrasena()">Guardar</ion-button>
+  
+</ion-content>
