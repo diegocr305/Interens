@@ -14,4 +14,8 @@ export class HomePage {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.userInfo = this.router.getCurrentNavigation()?.extras.state?.['user'];
   }
+
+  ngOnInit() {
+    console.log(this.userInfo);
+  }
 }

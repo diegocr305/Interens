@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
+import { LUsuario } from '../models/lUsuario';
 
 @Component({
   selector: 'app-user',
@@ -13,9 +14,8 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class UserPage implements OnInit {
 
-  userList:{email: string, password: string} [] = [
-    {email: 'jon', password: '123'},
-    {email: 'and', password: '123'}
+  userList: LUsuario[]= [
+    new LUsuario('12.123.321-k','pablo','perez','jimenez','pa.perez@gmail.com',undefined,'alumno',"pa.perez@duocuc.cl",'123'),
   ];
 
   user={
@@ -30,12 +30,12 @@ export class UserPage implements OnInit {
     
   }
 
-  actualizarContrasena(username: string, newPassword: string){
+  actualizarContrasena(usuario: string, newPassword: string){
     for(let i = 0; i < this.userList.length; i++){
-      console.log(username);  
+      console.log(usuario);  
       console.log(newPassword); 
        
-      if(this.userList[i].email === username){
+      if(this.userList[i].username === usuario){
         console.log(this.userList[i]);   
         this.userList[i].password = newPassword;   
         console.log(this.userList[i]);  

@@ -22,4 +22,5 @@ export const routes: Routes = [
     path: 'recuperar-contrasena',
     loadComponent: () => import('./recuperar-contrasena/recuperar-contrasena.page').then( m => m.RecuperarContrasenaPage)
   },
+
 ];
