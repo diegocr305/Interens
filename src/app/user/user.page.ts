@@ -15,7 +15,8 @@ import { LUsuario } from '../models/lUsuario';
 export class UserPage implements OnInit {
 
   userList: LUsuario[]= [
-    new LUsuario('12.123.321-k','pablo','perez','jimenez','pa.perez@gmail.com',undefined,'alumno',"pa.perez@duocuc.cl",'123'),
+    new LUsuario('12.123.321-k','pablo','perez','pa.perez@gmail.com','alumno','123'),
+    new LUsuario('12.123.321-k','pablo','perez','jop.perez@gmail.com','alumno','123'),
   ];
 
   user={
@@ -30,18 +31,17 @@ export class UserPage implements OnInit {
     
   }
 
-  actualizarContrasena(usuario: string, newPassword: string){
-    for(let i = 0; i < this.userList.length; i++){
-      console.log(usuario);  
+  actualizarContrasena(newPassword: string){//actualizarContrasena(usuario: string, newPassword: string)
+    for(let i = 0; i < this.userList.length; i++){ 
       console.log(newPassword); 
        
-      if(this.userList[i].username === usuario){
-        console.log(this.userList[i]);   
-        this.userList[i].password = newPassword;   
-        console.log(this.userList[i]);  
+      // if(this.userList[i].email === usuario){
+      //   console.log(this.userList[i]);   
+      //   this.userList[i].password = newPassword;   
+      //   console.log(this.userList[i]);  
         
-        break;
-      }
+      //   break;
+      // }
          
     }
   }

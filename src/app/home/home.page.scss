@@ -25,3 +25,13 @@
 #container a {
   text-decoration: none;
 }
+
+.social-btns{
+  margin-top:25px;
+  margin-bottom:25px;
+  text-align: center;
+  ion-button{
+      width: 110px;
+      padding-left: 0px !important;
+  }
+}

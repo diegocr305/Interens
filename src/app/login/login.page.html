@@ -3,21 +3,40 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h1 id="text">Hola,</h1>
-  <h2 id="text">Bienvenido</h2>
+  <h1 class="text-tag">Hola,Bienvenido</h1>
+  <ion-card-content>
+      <div>
+        <p>Email</p>
+        <ion-item class="border">
+          <ion-input type = "text" placeholder="Ingresa tu Email" [(ngModel)]="user.usuario"></ion-input>
+        </ion-item>
+        <p>Contraseña</p>
+        <ion-item class="border">
+          <ion-input type = "password" placeholder="Ingrese su Contraseña" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+      </div>
+      <div>
+          <ion-button style="text-align: center;" fill="clear" (click)="PagOlv()">¿Olvido su Contraseña?</ion-button>
+      </div>
+      <div class="signin-btns">
+        <ion-button fill="solid" shape="round" class="loginbtn" (click)="ingresar()">Login</ion-button>
+      </div>
+      <div class="text-tag">
+        <span>_______________________</span>
+      </div>
+      <div class="social-btns">
+        <ion-button fill="clear" class="googlebtn ion-no-padding">
+              <ion-img src="assets/img/google.png" alt=""></ion-img>
+        </ion-button> 
+        <ion-button fill="clear" class="facebookbtn ion-no-padding">
+            <ion-img src="assets/img/facebook.png" alt=""></ion-img>
+        </ion-button> 
+      </div>
+      <p style="text-align: center;">¿Aun no tiene cuenta?<a (click)="Registr()">Registrarse</a></p>
+      
+
+
+
+  </ion-card-content>
   
-  <ion-label id="text" >Email</ion-label>
-  <ion-item id="ion-item">
-    <ion-input type = "text" placeholder="Ingresa tu Email" [(ngModel)]="user.usuario"></ion-input>
-  </ion-item>
-  <ion-label id="text" position="floating">Clave</ion-label>
-  <ion-item id="ion-item">
-    <ion-input type = "password" placeholder="Ingrese su clave" [(ngModel)]="user.password"></ion-input>
-  </ion-item>
-  <ion-item>
-    <a href="/recuperar-contrasena" style="color: rgb(221, 146, 8)">¿olvide mi contraseña? </a>
-  </ion-item>
-  <ion-item>
-    <ion-button  id="botton" (click)="ingresar()">Ingresar</ion-button>
-  </ion-item>
 </ion-content>

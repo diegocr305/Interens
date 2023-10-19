@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, ToastController } from '@ionic/angular';
 import { UserPage } from '../user/user.page';
 import {NavigationExtras, Router } from '@angular/router';
+import { LUsuario } from '../models/lUsuario';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,10 @@ export class LoginPage implements OnInit {
     password: ""
   }
 
+  // ListUsuario: LUsuario[] = [
+  //   new LUsuario('12345678-k', 'Pedro', 'Perez','pe.perez@duocuc.cl','Admin', '123'),
+  // ];
+
   constructor(private userService: UserPage,private router: Router, public toastController: ToastController) { 
     
   }
@@ -29,16 +34,23 @@ export class LoginPage implements OnInit {
 
   ingresar(){
     for(let i = 0; i < this.userService.userList.length; i++){
-      if(this.userService.userList[i].username === this.user.usuario && this.userService.userList[i].password == this.user.password){
-        console.log(this.userService.userList[i]);
-        let navigationExtras: NavigationExtras = {
+      console.log(this.userService.userList[i].email)
+      if(this.userService.userList[i].email === this.user.usuario){
+        this.presentToast("Correo correcto")
+        if(this.userService.userList[i].password == this.user.password){
+          this.presentToast("contraseña correcta")
+          console.log(this.userService.userList[i]);
+          let navigationExtras: NavigationExtras = {
           state: {
             user: this.userService.userList[i]
           }
         }
         this.router.navigate(['/home'], navigationExtras);
+        }else{
+          this.presentToast("contraseña incorrecta")
+        }
       }else{
-         this.presentToast("Usuario o contraseña incorrecta")
+        this.presentToast("Usuario o contraseña incorrecta")
       }
     }
   }
@@ -49,6 +61,15 @@ export class LoginPage implements OnInit {
       duration: duration     
     });
     (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
+  }
+
+  //Funciones para redirigir 
+
+  PagOlv(){
+    this.router.navigate(['/recuperar-contrasena']);
+  }
+  Registr(){
+    this.router.navigate(['/registrar']);
   }
 
 }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { UserPage } from '../user/user.page';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router} from '@angular/router';
 
 @Component({
   selector: 'app-recuperar-contrasena',
@@ -16,8 +16,7 @@ import { Router } from '@angular/router';
 export class RecuperarContrasenaPage implements OnInit {
 
   user={
-    usuario: "",
-    newPassword: ""
+    usuario: ""
   }
 
   constructor(private userService: UserPage, private router: Router) { }
@@ -25,11 +24,18 @@ export class RecuperarContrasenaPage implements OnInit {
   ngOnInit() {
   }
 
-  
-  recuperarContrasena(){
-    this.userService.actualizarContrasena(this.user.usuario, this.user.newPassword);
-    console.log(`Contraseña cambiada exitosamente para ${this.user.usuario}`);
-    this.router.navigate(['/login']); 
 
+  Verificar(){
+    this.router.navigate(['/recuperar-contrasena-verificado']);
+     for(let i = 0; i < this.userService.userList.length; i++){
+        console.log(this.user.usuario);
+       //console.log(this.userService.userList[i].email)
+       if(this.userService.userList[i].email === this.user.usuario){
+         console.log(this.user.usuario);
+         this.router.navigate(['/recuperar-contrasena-verificado']);
+       }else{
+         console.log("error")
+       }
+     }
   }
 }
