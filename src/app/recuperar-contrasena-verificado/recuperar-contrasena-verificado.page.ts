@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ToastController } from '@ionic/angular';
 import { UserPage } from '../user/user.page';
 import { Router } from '@angular/router';
 
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class RecuperarContrasenaVerificadoPage implements OnInit {
 
-  constructor(private userService: UserPage, private router: Router) { }
+  constructor(private userService: UserPage, private router: Router, public toastController: ToastController) { }
 
   user={
     newPassword: ""
@@ -32,7 +32,16 @@ export class RecuperarContrasenaVerificadoPage implements OnInit {
   // }
 
   vollogin(){
+    this.presentToast("Guardado exitosamente")
     this.router.navigate(['/login']); 
   }
 
+
+  async presentToast(menssage: string, duration:number = 5000){//creacion de una funcion asincronica
+    let toast = this.toastController.create({ //creamos una variable toast que se inicializa llamando al metodo create 
+      message: menssage,
+      duration: duration     
+    });
+    (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
+  }
 }

@@ -33,25 +33,31 @@ export class LoginPage implements OnInit {
   }
 
   ingresar(){
-    for(let i = 0; i < this.userService.userList.length; i++){
-      console.log(this.userService.userList[i].email)
-      if(this.userService.userList[i].email === this.user.usuario){
-        this.presentToast("Correo correcto")
-        if(this.userService.userList[i].password == this.user.password){
-          this.presentToast("contraseña correcta")
+    let usuarioEncontrado = false; // Variable para rastrear si se ha encontrado el usuario
+    let contrasenaCorrecta = false; // Variable para rastrear si la contraseña es correcta
+
+    for (let i = 0; i < this.userService.userList.length; i++) {
+      console.log(this.userService.userList[i].email);
+
+      if (this.userService.userList[i].email === this.user.usuario) {
+        usuarioEncontrado = true; // Se ha encontrado el usuario
+
+        if (this.userService.userList[i].password === this.user.password) {
+          contrasenaCorrecta = true; // La contraseña es correcta
           console.log(this.userService.userList[i]);
           let navigationExtras: NavigationExtras = {
-          state: {
-            user: this.userService.userList[i]
+            state: {
+              user: this.userService.userList[i]
+            }
           }
+          this.router.navigate(['/home'], navigationExtras);
+          break; // Salir del bucle tan pronto como se encuentre una coincidencia
         }
-        this.router.navigate(['/home'], navigationExtras);
-        }else{
-          this.presentToast("contraseña incorrecta")
-        }
-      }else{
-        this.presentToast("Usuario o contraseña incorrecta")
       }
+    }
+
+    if (!usuarioEncontrado || !contrasenaCorrecta) {
+      this.presentToast("Usuario o contraseña incorrecta");
     }
   }
 

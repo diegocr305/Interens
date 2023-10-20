@@ -13,24 +13,24 @@
     <div>
       <p>Email</p>
       <ion-item class="border">
-        <ion-input type = "text" placeholder="Email"></ion-input>
+        <ion-input type = "text" placeholder="Email" [(ngModel)]="user.email"></ion-input>
       </ion-item>
       <p>Nombre Completo</p>
       <ion-item class="border">
-        <ion-input type = "password" placeholder="Nombre Completo"></ion-input>
+        <ion-input type = "text" placeholder="Nombre Completo" [(ngModel)]="user.nombre"></ion-input>
       </ion-item>
       <p>Telefono</p>
       <ion-item class="border">
-        <ion-input type = "text" placeholder="Telefono"></ion-input>
+        <ion-input type = "text" placeholder="Telefono" [(ngModel)]="user.telefono"></ion-input>
       </ion-item>
       <p>Contraseña</p>
       <ion-item class="border">
-        <ion-input type = "text" placeholder="Contraseña"></ion-input>
+        <ion-input type = "password" placeholder="Contraseña" [(ngModel)]="user.password"></ion-input>
       </ion-item>
     </div>
 
     <div class="signin-btns">
-      <ion-button fill="solid" shape="round" class="Registrartebtn">Registrarte</ion-button>
+      <ion-button fill="solid" shape="round" class="Registrartebtn" (click)="validarRegistro(user)">Registrarte</ion-button>
     </div>
 
   </ion-card-content>
