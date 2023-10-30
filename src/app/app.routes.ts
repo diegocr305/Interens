@@ -29,6 +29,14 @@ export const routes: Routes = [
   {
     path: 'recuperar-contrasena-verificado',
     loadComponent: () => import('./recuperar-contrasena-verificado/recuperar-contrasena-verificado.page').then( m => m.RecuperarContrasenaVerificadoPage)
+  },  {
+    path: 'productos',
+    loadComponent: () => import('./productos/productos.page').then( m => m.ProductosPage)
   },
+  {
+    path: 'perfil-producto',
+    loadComponent: () => import('./perfil-producto/perfil-producto.page').then( m => m.PerfilProductoPage)
+  },
+
 
 ];

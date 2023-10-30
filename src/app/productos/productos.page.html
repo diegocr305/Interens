@@ -1,0 +1,159 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title>Productos Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- First Product -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ productList[0].nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ productList[0].descripcion }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="" alt="" />
+          </ion-thumbnail>
+          <ion-label>
+            Precio: {{ productList[0].precio | currency:'USD':true }}
+            <br>
+            Stock: {{ productList[0].stock }}
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button expand="full" (click)="comprar(productList[0])">Comprar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Second Product -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ productList[1].nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ productList[1].descripcion }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="" alt="" />
+          </ion-thumbnail>
+          <ion-label>
+            Precio: {{ productList[1].precio | currency:'USD':true }}
+            <br>
+            Stock: {{ productList[1].stock }}
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button expand="full" (click)="comprar(productList[1])">Comprar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Third Product -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ productList[2].nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ productList[2].descripcion }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="" alt="" />
+          </ion-thumbnail>
+          <ion-label>
+            Precio: {{ productList[2].precio | currency:'USD':true }}
+            <br>
+            Stock: {{ productList[2].stock }}
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button expand="full" (click)="comprar(productList[2])">Comprar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Fourth Product -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ productList[3].nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ productList[3].descripcion }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="" alt="" />
+          </ion-thumbnail>
+          <ion-label>
+            Precio: {{ productList[3].precio | currency:'USD':true }}
+            <br>
+            Stock: {{ productList[3].stock }}
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button expand="full" (click)="comprar(productList[3])">Comprar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Fifth Product -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ productList[4].nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ productList[4].descripcion }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="" alt="" />
+          </ion-thumbnail>
+          <ion-label>
+            Precio: {{ productList[4].precio | currency:'USD':true }}
+            <br>
+            Stock: {{ productList[4].stock }}
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button expand="full" (click)="comprar(productList[4])">Comprar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Sixth Product -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ productList[5].nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ productList[5].descripcion }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="" alt="" />
+          </ion-thumbnail>
+          <ion-label>
+            Precio: {{ productList[5].precio | currency:'USD':true }}
+            <br>
+            Stock: {{ productList[5].stock }}
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button expand="full" (click)="comprar(productList[5])">Comprar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  
+
