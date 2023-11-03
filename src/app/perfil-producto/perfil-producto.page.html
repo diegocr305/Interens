@@ -12,7 +12,8 @@
     
     <ion-card-content>
       <ion-thumbnail slot="start">
-        <img [src]="'assets/img/laptop-hp.jpg'" alt="Laptop HP" />
+        <img [src]="producto.imagenSrc" alt="{{ producto.nombre }}" />
+
       </ion-thumbnail>
       <p><strong>ID:</strong> {{ producto.id }}</p>
       <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>

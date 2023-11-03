@@ -7,7 +7,7 @@ export class Producto {
         public descripcion: string,
         public precio: number,
         public stock: number,
-        public imagen: string,
+        public imagenSrc: string, // Agregamos el atributo imagenSrc de tipo string
     ) {
     }
 }

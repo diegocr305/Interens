@@ -13,14 +13,17 @@ import { Producto } from '../models/producto';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class ProductosPage implements OnInit {
+  imagenSrc = 'assets/img/';
+  
   productList: Producto[]= [
-    new Producto(1, 'Laptop', 'Laptop HP', 1000, 10, 'https://picsum.photos/200/300'),
-    new Producto(2, 'Refrigeradora', 'Refrigeradora LG', 2000, 5, 'https://picsum.photos/200/300'),
-    new Producto(3, 'Televisor', 'Televisor Sony', 3000, 15, 'https://picsum.photos/200/300'),
-    new Producto(4, 'Lavadora', 'Lavadora Samsung', 4000, 20, 'https://picsum.photos/200/300'),
-    new Producto(5, 'Cocina', 'Cocina Mabe', 5000, 25, 'https://picsum.photos/200/300'),
-    new Producto(6, 'Microondas', 'Microondas Panasonic', 6000, 30, 'https://picsum.photos/200/300'),
+    new Producto(1, 'Laptop', 'Laptop HP', 1000, 10, this.imagenSrc+'laptop-hp.jpg'),
+    new Producto(2, 'Refrigeradora', 'Refrigeradora LG', 2000, 5, this.imagenSrc+'refri-lg.jpg'),
+    new Producto(3, 'Televisor', 'Televisor Sony', 3000, 15, this.imagenSrc+'tv-sony.jpeg'),
+    new Producto(4, 'Lavadora', 'Lavadora Samsung', 4000, 20, this.imagenSrc+'lavadora-samsung.jpeg'),
+    new Producto(5, 'Cocina', 'Cocina Mabe', 5000, 25, this.imagenSrc+'cocina-mabe.jpg'),
+    new Producto(6, 'Microondas', 'Microondas Panasonic', 6000, 30, this.imagenSrc+'microondas-panasonic.png'),
   ];
+
 
   
 
