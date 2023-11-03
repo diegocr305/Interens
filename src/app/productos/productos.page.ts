@@ -32,14 +32,14 @@ export class ProductosPage implements OnInit {
     console.log(this.productList);
   }
 
-  comprar(productList: Producto) {
-    console.log(productList);
+  comprar(producto: Producto) {
+    console.log(producto);
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        productoId: productList.id,
+        productoId: producto.id,
       }
     };
 
-    this.router.navigate(['/perfil-producto']);
+    this.router.navigate(['/perfil-producto'], { state: { producto: producto } });
   }
 }

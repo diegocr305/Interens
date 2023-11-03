@@ -1,19 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ producto?.nombre }}</ion-title>
+    <ion-title>Perfil del Producto</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card *ngIf="producto">
-    <img [src]="producto?.imagen" />
+<ion-content>
+  <ion-card>
     <ion-card-header>
-      <ion-card-title>{{ producto?.nombre }}</ion-card-title>
-      <ion-card-subtitle>{{ producto?.descripcion }}</ion-card-subtitle>
+      <ion-card-title>{{ producto.nombre }}</ion-card-title>
     </ion-card-header>
+    
     <ion-card-content>
-      <p><strong>Precio:</strong> {{ producto?.precio | currency:'USD':true }}</p>
-      <p><strong>Stock:</strong> {{ producto?.stock }}</p>
+      <ion-thumbnail slot="start">
+        <img [src]="'assets/img/laptop-hp.jpg'" alt="Laptop HP" />
+      </ion-thumbnail>
+      <p><strong>ID:</strong> {{ producto.id }}</p>
+      <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+      <p><strong>Precio:</strong> {{ producto.precio | currency:'USD':true }}</p>
+      <p><strong>Stock:</strong> {{ producto.stock }}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>

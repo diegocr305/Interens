@@ -11,17 +11,26 @@ import { Producto } from '../models/producto';
   templateUrl: './perfil-producto.page.html',
   styleUrls: ['./perfil-producto.page.scss'],
   standalone: true,
+  
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class PerfilProductoPage implements OnInit {
-  producto: any;
-
-  constructor(private route:ActivatedRoute) { }
+  producto: any = {};
+  
+  constructor(private route:ActivatedRoute) { 
+    console.log('constructor');
+  }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(NavParams =>{
-      this.producto = JSON.parse(NavParams['producto']);
-    }); 
+    if (history.state.producto) {
+      this.producto = history.state.producto;
+      console.log('Producto Obtenido:', this.producto);
+      // ... otros campos
+    } else {
+      console.error('Producto no definido');
+    }
   }
+  
+
 
 }

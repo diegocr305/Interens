@@ -14,6 +14,10 @@ export class HomePage {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.userInfo = this.router.getCurrentNavigation()?.extras.state?.['user'];
   }
+  goToProductosPage() {
+    this.router.navigate(['/productos']);  // Asumiendo que la ruta a productos.page es '/productos'
+  }
+  
 
   ngOnInit() {
     console.log(this.userInfo);

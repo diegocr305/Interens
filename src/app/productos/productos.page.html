@@ -1,4 +1,4 @@
-<ion-header >
+<ion-header>
   <ion-toolbar>
     <ion-title>Productos Disponibles</ion-title>
   </ion-toolbar>
@@ -16,7 +16,7 @@
       <ion-list>
         <ion-item>
           <ion-thumbnail slot="start">
-            <img [src]="" alt="" />
+            <img [src]="'assets/img/laptop-hp.jpg'" alt="Laptop HP" />
           </ion-thumbnail>
           <ion-label>
             Precio: {{ productList[0].precio | currency:'USD':true }}
@@ -41,7 +41,7 @@
       <ion-list>
         <ion-item>
           <ion-thumbnail slot="start">
-            <img [src]="" alt="" />
+            <img [src]="'assets/img/refri-lg.jpg'" alt="Refrigerador LG" />
           </ion-thumbnail>
           <ion-label>
             Precio: {{ productList[1].precio | currency:'USD':true }}
@@ -66,7 +66,7 @@
       <ion-list>
         <ion-item>
           <ion-thumbnail slot="start">
-            <img [src]="" alt="" />
+            <img [src]="'assets/img/tv-sony.jpeg'" alt="Televisor Sony" />
           </ion-thumbnail>
           <ion-label>
             Precio: {{ productList[2].precio | currency:'USD':true }}
@@ -91,7 +91,7 @@
       <ion-list>
         <ion-item>
           <ion-thumbnail slot="start">
-            <img [src]="" alt="" />
+            <img [src]="'assets/img/lavadora-samsung.jpeg'" alt="Lavadora Samsung" />
           </ion-thumbnail>
           <ion-label>
             Precio: {{ productList[3].precio | currency:'USD':true }}
@@ -116,7 +116,7 @@
       <ion-list>
         <ion-item>
           <ion-thumbnail slot="start">
-            <img [src]="" alt="" />
+            <img [src]="'assets/img/cocina-mabe.jpg'" alt="Cocina Mabe" />
           </ion-thumbnail>
           <ion-label>
             Precio: {{ productList[4].precio | currency:'USD':true }}
@@ -141,7 +141,7 @@
       <ion-list>
         <ion-item>
           <ion-thumbnail slot="start">
-            <img [src]="" alt="" />
+            <img [src]="'assets/img/microondas-panasonic.png'" alt="" />
           </ion-thumbnail>
           <ion-label>
             Precio: {{ productList[5].precio | currency:'USD':true }}
@@ -155,5 +155,3 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-  
-
