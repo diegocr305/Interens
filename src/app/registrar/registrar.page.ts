@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule, ToastController } from '@ionic/angular';
+import { IonicModule, NavController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { UserService } from '../servicios/user.service';
+import { LUsuario } from '../models/lUsuario';
+import { lastValueFrom } from 'rxjs';
+
 
 @Component({
   selector: 'app-registrar',
@@ -13,13 +17,16 @@ import { Router } from '@angular/router';
 })
 export class RegistrarPage implements OnInit {
   user={
+    rut: "",
+    nombre: "",
+    apellidopaterno: "",
     email: "",
-    nombre:"",
-    telefono: "",
-    password: ""
+    password: "",
+    genero: "",
   }
-  v = 0;
-  constructor(private router: Router, public toastController: ToastController) { 
+  
+  
+  constructor(private router: Router, public toastController: ToastController, private navCtrl: NavController, private userService: UserService) { 
 
   }
 
@@ -27,53 +34,52 @@ export class RegistrarPage implements OnInit {
   ngOnInit() {
     
   }
+
+
+  async presentToast(message: string, duration: number = 2000) {
+    const toast = await this.toastController.create({
+      message,
+      duration,
+      position: 'bottom'
+    });
+    toast.present();
+  }
+
+  camposValidos(): boolean {
+
+    // Verifica que ningún campo string esté vacío
+    const camposValidos = this.user.rut.trim() !== '' &&
+           this.user.nombre.trim() !== '' &&
+           this.user.apellidopaterno.trim() !== '' &&
+           this.user.email.trim() !== '' &&
+           this.user.password.trim() !== '' &&
+           this.user.genero.trim() !== '';
+    console.log('Campos válidos:', camposValidos);
+    return camposValidos;
+                      
+  }
   
   validarRegistro(user: any) {
-    // Realiza las validaciones de datos aquí
-    if (!user.email || !user.telefono || !user.nombre) {
-      console.log('Datos de registro no válidos');
-      this.v = this.v + 1;
-      console.log(this.v);
-    }
+    if (this.camposValidos()) {
+      this.userService.registerUser(user).subscribe({
+        next: (response: any) => {
+          // Mostrar mensaje de éxito
+          this.presentToast('Registro exitoso.', 3000);
 
-    // Validar formato de correo electrónico
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
-    if (!emailPattern.test(user.email)) {
-      console.log('Formato de correo electrónico no válido');
-      this.v = this.v + 1;
-      console.log(this.v);
+          // Redirigir a la página de inicio después de mostrar el mensaje
+          setTimeout(() => {
+            this.navCtrl.navigateRoot('/home');
+          }, 3200); // Esperar un poco más que la duración del toast para garantizar que el usuario vea el mensaje
+        },
+        error: (error: any) => {
+          console.error('Error al registrar el usuario:', error);
+          this.presentToast('Error al registrar el usuario. Inténtalo de nuevo.');
+        }
+      });
+    } else {
+      this.presentToast('Por favor, rellena todos los campos requeridos.');
     }
-
-    // Validar que el teléfono contenga solo números
-    const phonePattern = /^[0-9]+$/;
-    if (!phonePattern.test(user.telefono)) {
-      console.log('El teléfono debe contener solo números');
-      this.v = this.v + 1;
-      console.log(this.v);
-    }
-
-    // Validar que la contraseña no supere los 8 caracteres
-    if (user.password.length < 8) {
-      console.log('La contraseña no debe superar los 8 caracteres');
-      this.v = this.v + 1;
-      console.log(this.v);
-    }
-
-    if (this.v === 0){
-      console.log('Datos de registro válidos');
-      console.log('Guardado exitosamente');
-      this.router.navigate(['/login']);
-    }
-    this.v = this.v - this.v;
-    console.log(this.v);
   }
 
-
-  async presentToast(menssage: string, duration:number = 5000){//creacion de una funcion asincronica
-    let toast = this.toastController.create({ //creamos una variable toast que se inicializa llamando al metodo create 
-      message: menssage,
-      duration: duration     
-    });
-    (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
-  }
+  // ...resto del código del componente
 }

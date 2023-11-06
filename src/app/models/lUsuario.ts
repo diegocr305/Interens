@@ -5,7 +5,7 @@ export class LUsuario {
         public nombre: string,
         public apellidoPaterno: string,
         public email: string,
-        public tipo: string,
+        public genero: string,
         public password: string,
     ) {
     }

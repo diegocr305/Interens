@@ -1,42 +1,42 @@
-<ion-header [translucent]="true">
-  
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Login Alumno</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h1 class="text-tag">Hola,Bienvenido</h1>
   <ion-card-content>
+    <form (ngSubmit)="Login(userlogin)">
       <div>
-        <p>Email</p>
+        <p>Usuario</p>
         <ion-item class="border">
-          <ion-input type = "text" placeholder="Ingresa tu Email" [(ngModel)]="user.usuario"></ion-input>
+          <ion-input class="animated-title" [(ngModel)]="user.email" placeholder="usuario@duocuc.cl" type="email"
+            name="email" required></ion-input>
         </ion-item>
         <p>Contraseña</p>
         <ion-item class="border">
-          <ion-input type = "password" placeholder="Ingrese su Contraseña" [(ngModel)]="user.password"></ion-input>
+          <ion-input class="animated-title" [(ngModel)]="user.password" type="password" name="password"
+            required></ion-input>
         </ion-item>
       </div>
       <div>
-          <ion-button style="text-align: center;" fill="clear" (click)="PagOlv()">¿Olvido su Contraseña?</ion-button>
+        <a style="text-align: center;margin: 0;padding: 100" (click)="PagOlv()">¿Olvido su Contraseña?</a>
       </div>
-      <div class="signin-btns">
-        <ion-button fill="solid" shape="round" class="loginbtn" (click)="ingresar()">Login</ion-button>
+      <div class="signin-btn">
+        <ion-button fill="solid" shape="round" class="animated-title loginbtn"
+          (click)="Login(user)">INGRESAR</ion-button>
       </div>
-      <div class="text-tag">
-        <span>_______________________</span>
+      <div class="signin-btn">
+        <ion-button fill="solid" shape="round" class="animated-title loginbtn"
+          (click)="Registr()">REGISTRAR</ion-button>
       </div>
-      <div class="social-btns">
-        <ion-button fill="clear" class="googlebtn ion-no-padding">
-              <ion-img src="assets/img/google.png" alt=""></ion-img>
-        </ion-button> 
-        <ion-button fill="clear" class="facebookbtn ion-no-padding">
-            <ion-img src="assets/img/facebook.png" alt=""></ion-img>
-        </ion-button> 
+      <div style="text-align: center;margin-top: 70px;">
+        <img src="assets/img/LOGO.png" width="200" height="200" alt="Logo Interens">
+        <p>Interens</p>
       </div>
-      <p style="text-align: center;">¿Aun no tiene cuenta?<a (click)="Registr()">Registrarse</a></p>
-      
-
-
-
+    </form>
   </ion-card-content>
-  
 </ion-content>
