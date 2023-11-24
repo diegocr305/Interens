@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ToastController } from '@ionic/angular';
-import { UserPage } from '../user/user.page';
 import { NavigationExtras, Router } from '@angular/router';
 import { UserService } from '../servicios/user.service';
 import { userLogin } from '../models/userlogin';
 import { lastValueFrom } from 'rxjs';
-import { LUsuario } from '../models/lUsuario';
 
 
 @Component({
@@ -22,28 +20,24 @@ import { LUsuario } from '../models/lUsuario';
 export class LoginPage implements OnInit {
   userlogin: any; // Variable para almacenar los datos del usuario que se está logueando
 
-  user = {
-    email: "",
+  user={
+    usuario: "",
     password: ""
   }
 
-  constructor(private userService: UserService, private router: Router, public toastController: ToastController) {
+  constructor(private userservice: UserService, private router: Router, public toastController: ToastController) {
 
   }
 
   ngOnInit() {
   }
 
-  async Login(userlogin: any) {
-    const user: userLogin = {
-      usuario: userlogin.usuario,
-      password: userlogin.password
-    };
-    const user_login = await lastValueFrom(this.userService.getLogin(userlogin));
-    console.log(user_login);
-    if (user_login) {
+  async Login(userLoginInfo: userLogin) {
+    const user_alumno = await lastValueFrom(this.userservice.getLogin(userLoginInfo));
+    console.log(user_alumno);
+    if (user_alumno) {
       console.log("Usuario existe...");
-      this.router.navigate(['/home'], { state: { userInfo: user_login } })
+      this.router.navigate(['/home'], { state: { userInfo: user_alumno}})
     } else {
       //NO EXISTE
       console.log("Usuario no existe...");

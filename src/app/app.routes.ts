@@ -7,16 +7,12 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'portada',
     pathMatch: 'full',
   },
   {
     path: 'login',
     loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
-  },
-  {
-    path: 'user',
-    loadComponent: () => import('./user/user.page').then( m => m.UserPage)
   },
   {
     path: 'recuperar-contrasena',
@@ -29,7 +25,8 @@ export const routes: Routes = [
   {
     path: 'recuperar-contrasena-verificado',
     loadComponent: () => import('./recuperar-contrasena-verificado/recuperar-contrasena-verificado.page').then( m => m.RecuperarContrasenaVerificadoPage)
-  },  {
+  },
+  {
     path: 'productos',
     loadComponent: () => import('./productos/productos.page').then( m => m.ProductosPage)
   },
@@ -37,6 +34,15 @@ export const routes: Routes = [
     path: 'perfil-producto',
     loadComponent: () => import('./perfil-producto/perfil-producto.page').then( m => m.PerfilProductoPage)
   },
+  {
+    path: 'portada',
+    loadComponent: () => import('./portada/portada.page').then( m => m.PortadaPage)
+  },
+  {
+    path: 'voluntario',
+    loadComponent: () => import('./voluntario/voluntario.page').then( m => m.VoluntarioPage)
+  },
+
 
 
 ];

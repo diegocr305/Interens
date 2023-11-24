@@ -1,0 +1,28 @@
+* {
+    --background: #ffffff; /* Cambia el color de fondo aquí */
+  }
+.signin-btns{
+    margin-top: 25px;
+    text-align: center;
+    h1{
+        color: rgb(10, 163, 23);
+    }
+
+}
+
+ion-img {
+
+        width: 60px; /* ajusta según tus necesidades */
+        height: auto;
+        display: flex;
+        justify-content:center; //horizontal
+        align-items: center; //vertical
+}
+
+ion-content.fondohome {
+    --background: url('../../assets/img/portada.png')center center/cover no-repeat; /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta real de tu imagen */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
