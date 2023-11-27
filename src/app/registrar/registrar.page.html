@@ -1,42 +1,47 @@
-
-
-<ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inline Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="validarRegistro(user)"></form>
 
   <form (ngSubmit)="validarRegistro(user)">
+
     <ion-item>
       <ion-label position="floating">RUT</ion-label>
-      <ion-input type="text" [(ngModel)]="user.rut" name="rut" required></ion-input>
+      <ion-input aria-label type="text" [(ngModel)]="user.rut" name="rut" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text" [(ngModel)]="user.nombre" name="nombre" required></ion-input>
+      <ion-input aria-label type="text" [(ngModel)]="user.nombre" name="nombre" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Apellido Paterno</ion-label>
-      <ion-input type="text" [(ngModel)]="user.apellidopaterno" name="apellidopaterno" required></ion-input>
+      <ion-input aria-label type="text" [(ngModel)]="user.apellidopaterno" name="apellidopaterno" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="email" [(ngModel)]="user.email" name="email" required></ion-input>
+      <ion-input aria-label type="email" [(ngModel)]="user.email" name="email" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="user.password" name="password" required></ion-input>
+      <ion-input aria-label type="password" [(ngModel)]="user.password" name="password" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label>Género</ion-label>
-      <ion-select [(ngModel)]="user.genero" name="genero" placeholder="Seleccione uno" interface="popover">
-        <ion-select-option value="femenino">Femenino</ion-select-option>
-        <ion-select-option value="masculino">Masculino</ion-select-option>
+      <ion-label aria-label position="floating">Género</ion-label>
+      <ion-select label [(ngModel)]="user.genero" name="genero" placeholder="Seleccione uno" interface="popover">
+        <ion-select-option value="femenino" class="text-left">Femenino</ion-select-option>
+        <ion-select-option value="masculino" class="text-left">Masculino</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-button fill="solid" shape="round" class="animated-title loginbtn"
-      (click)="validarRegistro(user)">INGRESAR</ion-button>
+      (click)="validarRegistro(user)">REGISTRAR</ion-button>
   </form>
 </ion-content>
