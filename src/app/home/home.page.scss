@@ -40,7 +40,7 @@
 }
 //
 .imge{
-  width:350px;
+  width:360px;
   margin-left:10px;
 }
 
@@ -58,22 +58,22 @@ p{
   justify-content: center;
   align-items: center;
   --background: rgb(226, 226, 230);  /* Color de fondo del botón */
-  margin-left: 50px;
+  margin-left: 60px;
   
 }
 
 
 
 .icono-imagen-derecho {
-  width: 30px; /* Ajusta el ancho según tus necesidades */
-  height: 30px; /* Ajusta la altura según tus necesidades */
+  width: 25px; /* Ajusta el ancho según tus necesidades */
+  height: 25px; /* Ajusta la altura según tus necesidades */
   background: url('../../assets/img/magnifier.png') center/cover no-repeat; /* Ruta a tu imagen */
   border-radius: 50%; /* Hace que el contenedor sea circular */
 }
 
 .icono-imagen-izquierdo {
-  width: 30px; /* Ajusta el ancho según tus necesidades */
-  height: 30px; /* Ajusta la altura según tus necesidades */
+  width: 25px; /* Ajusta el ancho según tus necesidades */
+  height: 25px; /* Ajusta la altura según tus necesidades */
   
   background: url('../../assets/img/up-arrow.png') center/cover no-repeat; /* Ruta a tu imagen */
   border-radius: 50%; /* Hace que el contenedor sea circular */
