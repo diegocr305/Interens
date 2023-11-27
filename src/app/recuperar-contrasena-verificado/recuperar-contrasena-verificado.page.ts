@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ToastController } from '@ionic/angular';
-import { UserPage } from '../user/user.page';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,11 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./recuperar-contrasena-verificado.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule],
-  providers: [UserPage],
 })
 export class RecuperarContrasenaVerificadoPage implements OnInit {
 
-  constructor(private userService: UserPage, private router: Router, public toastController: ToastController) { }
+  constructor(private router: Router, public toastController: ToastController) { }
 
   user={
     newPassword: ""

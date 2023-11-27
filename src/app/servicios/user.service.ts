@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LUsuario } from '../models/lUsuario';
 import { Observable, catchError, map } from 'rxjs';
+import { userLogin } from '../models/userlogin';
 
 
 @Injectable({
@@ -30,8 +31,8 @@ export class UserService {
     }
 
     // Obtener todos los usuarios
-    getLogin(UserLogin: LUsuario): Observable<string | any> {
-      return this._http.get<any>(this.URL_SUPEBASE + "usuarios?email=eq." + UserLogin.email + "&password=eq." + UserLogin.password, { headers: this.supebaseheads }).pipe(
+    getLogin(UserLogin: userLogin): Observable<string | any> {
+      return this._http.get<any>(this.URL_SUPEBASE + "usuarios?email=eq." + UserLogin.usuario + "&password=eq." + UserLogin.password, { headers: this.supebaseheads }).pipe(
         map((user) => {
           console.log("Map", user[0])
           return user[0]

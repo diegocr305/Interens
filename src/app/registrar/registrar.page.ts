@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, NavController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { UserService } from '../servicios/user.service';
-import { LUsuario } from '../models/lUsuario';
 import { lastValueFrom } from 'rxjs';
 
 

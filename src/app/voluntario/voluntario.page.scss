@@ -1,0 +1,31 @@
+* {
+    --background: #ffffff!important; /* Cambia el color de fondo aquí */
+  }
+.signin-btns{
+    margin-top: 25px;
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+
+ion-content{
+    h1{
+        color: black;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    p{
+        color: rgb(116, 116, 116);
+        margin-left: 20px;
+    }
+}
+
+.signin-btns{
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+
+
