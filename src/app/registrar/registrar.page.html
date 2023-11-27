@@ -1,44 +1,44 @@
 <ion-header style="box-shadow: none; ">
-  <ion-title >Crear una cuenta</ion-title>
-  <p>Vamos a ayudarle a configurar su cuenta,no le llevará mucho tiempo</p>
 </ion-header>
 
 <ion-content>
+  <ion-title style="color: black; font-weight: bold;margin-top: 10px;">Crear una cuenta</ion-title>
+  <p style="color:black;margin-left: 20px;">Vamos a ayudarle a configurar su cuenta,no le llevará mucho tiempo</p>
   <form (ngSubmit)="validarRegistro(user)">
+    <p class="p" style="color:black">Rut</p>
       <ion-item class="border"  [class.has-value]="user.rut">
-        <ion-label style="margin-bottom: 1px;" position="floating" class="">Rut</ion-label>
+        <ion-label style="margin-bottom: 1px;" position="floating" ></ion-label>
         <ion-input type="text" [(ngModel)]="user.rut" name="rut" required></ion-input>
       </ion-item>
-
+      <p style="color:black;margin: 1px 1px 1px 20px">Nombre</p>
       <ion-item class="border" >
-        <ion-label position="floating" style="margin-bottom: 1px;">Nombre</ion-label>
+        <ion-label position="floating" style="margin-bottom: 1px;"></ion-label>
         <ion-input  type="text" [(ngModel)]="user.nombre" name="nombre" required></ion-input>
       </ion-item>
-
+      <p style="color:black;margin: 1px 1px 1px 20px">Apellido Paterno</p>
       <ion-item class="border">
         <ion-label position="floating" style="margin-bottom: 1px;">Apellido Paterno</ion-label>
         <ion-input type="text" [(ngModel)]="user.apellidopaterno" name="apellidopaterno" required></ion-input>
       </ion-item>
-
+      <p style="color:black;margin: 1px 1px 1px 20px">Email</p>
       <ion-item class="border">
-        <ion-label position="floating" style="margin-bottom: 1px;">Email</ion-label>
+        <ion-label position="floating" style="margin-bottom: 1px;"></ion-label>
         <ion-input type="email" [(ngModel)]="user.email" name="email" required></ion-input>
       </ion-item>
-
+      <p style="color:black;margin: 1px 1px 1px 20px">Contraseña</p>
       <ion-item class="border">
-        <ion-label position="floating" style="margin-bottom: 1px;">Contraseña</ion-label>
+        <ion-label position="floating" style="margin-bottom: 1px;"></ion-label>
         <ion-input type="password" [(ngModel)]="user.password" name="password" required></ion-input>
       </ion-item>
-
-      <ion-item>
-        <ion-label>Género</ion-label>
-        <ion-select [(ngModel)]="user.genero" name="genero" placeholder="Seleccione uno" interface="popover">
+      <p style="color:black;margin: 1px 1px 1px 20px">Genero</p>
+      <ion-item class="border">
+        <ion-select [(ngModel)]="user.genero" name="genero" style="color: black;" placeholder="Seleccione uno" interface="popover">
           <ion-select-option value="femenino">Femenino</ion-select-option>
           <ion-select-option value="masculino">Masculino</ion-select-option>
         </ion-select>
       </ion-item>
 
-    <div >      
+    <div>      
       <ion-button class="btn" (click)="validarRegistro(user)"><p style="position: fixed;">Ingresar</p>
       <ion-icon style="padding-left:150px" name="arrow-forward"></ion-icon>
       </ion-button>

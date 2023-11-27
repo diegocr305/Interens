@@ -6,6 +6,7 @@
 ion-header{
     margin: 10px 10px 10px 1px;
     position: absolute;
+    position: fixed;
 
     ion-title{
         font-weight: bold;
@@ -13,6 +14,7 @@ ion-header{
     }
     p{
         color: black;
+        margin: 5px 10px 10px 60px;
         margin-left: 20px;
         padding-right: 80px; 
         font-size: 14px;
@@ -63,7 +65,7 @@ h1{
 }
 
 form{
-    margin-top: 80px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     
@@ -76,8 +78,6 @@ form{
     width: 340px; /* Ajusta este valor al ancho deseado */
     height: 60px;
     padding: 8px 16px; /* Ajusta estos valores al padding deseado */
-    position: fixed;
-   
 }
 ion-item {
     ion-label{
@@ -99,7 +99,7 @@ ion-item {
 ion-item.has-value ion-label {
     transform: translateY(-24px) scale(0.75); /* Ajusta según tus necesidades */
   }
-  
-  
 
-
+.p{
+    margin: 1px 10px 1px 20px;
+}

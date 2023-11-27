@@ -12,9 +12,9 @@
 
 .btn{
     display: flex;
-    margin: 0px 1px 15px 10px; // arriba  derecha  abajo  izquieda
+    margin: 0px 1px 15px 20px; // arriba  derecha  abajo  izquieda
     --background: rgb(95, 103, 212); 
-    width: 340px; /* Ajusta este valor al ancho deseado */
+    width: 310px; /* Ajusta este valor al ancho deseado */
     height: 60px;
     padding: 8px 16px; /* Ajusta estos valores al padding deseado */
     position: fixed;
@@ -24,7 +24,7 @@
 ion-img {
         width: 100px;
         margin-left: 135px;
-        margin-top: 330px;
+        margin-top: 350px;
 }
 h1{
     display: flex;
@@ -39,4 +39,6 @@ ion-content.fondohome {
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+
 
