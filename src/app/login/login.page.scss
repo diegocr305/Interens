@@ -1,3 +1,25 @@
+* {
+    --background: #ffffff; /* Cambia el color de fondo aquí */
+  }
+
+.tituloh1{
+    color:black;
+    margin-top: 35px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+.titulo2h2{
+    color:black;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+
+p{
+    color: black;
+    margin-left: 17px;
+}
+
 ion-toolbar{
     --ion-background-color: transparent;
     --opacity:0;
@@ -14,20 +36,6 @@ ion-header{
 }
 
 
-.loginbtn{
-   --ion-color-primary: #215ab7;
-}
-
-.text-tag{
-    margin-top: 35px;
-    text-align: center;
-    span{
-        font-size: 13px;
-        font-weight: normal;
-        color: rgb(133, 132, 132);
-    }
-}
-
 ion-item{
     ion-input{
         color:#5b5c5c;
@@ -35,11 +43,22 @@ ion-item{
 }
 
 .border{
-  border: 2px solid #007bff; /* Establece un borde sólido de 2 píxeles con un color azul (#007bff) */
+  border: 2px solid rgb(161, 161, 161); /* Establece un borde sólido de 2 píxeles con un color azul (#007bff) */
   border-radius: 15px;
+  margin: 1px 10px 10px 10px; // arriba  derecha  abajo  izquieda
 }
 
-.social-btns{
+.btn{
+    display: flex;
+    margin: 10px 15px 20px 15px;
+    --background: rgb(12, 9, 226); 
+    width: 300px; /* Ajusta este valor al ancho deseado */
+    height: 60px;
+    padding: 8px 16px; /* Ajusta estos valores al padding deseado */
+   
+}
+
+.social-btns-google{
     margin-top:25px;
     margin-bottom:25px;
     text-align: center;
@@ -48,3 +67,29 @@ ion-item{
         padding-left: 5px !important;
     }
 }
+
+.olvbtn{
+    color: rgb(214, 141, 5);
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.divspan{
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    span{
+        color: black;
+    }
+    
+}
+// .text-tag{
+//     margin-top: 35px;
+//     text-align: center;
+//     span{
+//         font-size: 13px;
+//         font-weight: normal;
+//         color: rgb(133, 132, 132);
+//     }
+// }
+

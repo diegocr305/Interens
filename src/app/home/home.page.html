@@ -1,30 +1,21 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar> 
-    <ion-title></ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaulthref="login" text="Volver"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div>
+      <ion-img class="imge" src="assets/img/old3.png"></ion-img>
+  </div>
   <ion-card-content>
-    <div>
-      <ion-img></ion-img>
-    </div>
     <div class="social-btns">
-      <ion-button fill="clear" class="googlebtn ion-no-padding">
-        <ion-img src="assets/img/recycle-symbol.png" alt=""></ion-img>
-        <h2 style="color: rgb(66, 167, 8);font-weight: bold;">InterEns</h2>
-      </ion-button>
+      <ion-img style="width: 140px;margin-left: 100px;" src="assets/img/inter.png" alt=""></ion-img>
       <h1>¿Que hacemos hoy?</h1>
-      <p style="color: rgb(66, 167, 8);font-weight: bold;">Encuentra,publico y conecta.</p>
+      <p style="color: rgb(15, 74, 202);font-weight: bold;">Encuentra,publica y conecta.</p>
       <p>Descubre objetos cerca de ti para una segunda vida</p>
     </div>
-    <div class="signin-btns">
-      <ion-button expand="full" >Subir</ion-button>
-      <ion-button expand="full" (click)="goToProductosPage()">Buscar</ion-button>
-
+    <div class="signin-btns" style="display: flex;">
+      <ion-button class="boton-circular" shape="round" >
+        <div class="icono-imagen-izquierdo"></div>
+      </ion-button>
+      <ion-button class="boton-circular" shape="round" expand="full" (click)="goToProductosPage()">
+        <div class="icono-imagen-derecho"></div>
+      </ion-button>
     </div>
-  </ion-card-content>   
+  </ion-card-content>
 </ion-content>

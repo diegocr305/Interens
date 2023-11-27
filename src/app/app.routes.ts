@@ -41,7 +41,11 @@ export const routes: Routes = [
   {
     path: 'voluntario',
     loadComponent: () => import('./voluntario/voluntario.page').then( m => m.VoluntarioPage)
+  },  {
+    path: 'info-carrucel',
+    loadComponent: () => import('./info-carrucel/info-carrucel.page').then( m => m.InfoCarrucelPage)
   },
+
 
 
 

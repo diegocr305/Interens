@@ -1,3 +1,6 @@
+* {
+  --background: #ffffff; /* Cambia el color de fondo aquí */
+}
 #container {
   text-align: center;
 
@@ -34,4 +37,44 @@
       width: 110px;
       padding-left: 0px !important;
   }
+}
+//
+.imge{
+  width:350px;
+  margin-left:10px;
+}
+
+h1{
+  color:black;
+}
+
+p{
+  color: black;
+}
+
+.boton-circular {
+  width: 80px; /* Ajusta el ancho según tus necesidades */
+  height: 80px; /* Ajusta la altura según tus necesidades */
+  justify-content: center;
+  align-items: center;
+  --background: rgb(226, 226, 230);  /* Color de fondo del botón */
+  margin-left: 50px;
+  
+}
+
+
+
+.icono-imagen-derecho {
+  width: 30px; /* Ajusta el ancho según tus necesidades */
+  height: 30px; /* Ajusta la altura según tus necesidades */
+  background: url('../../assets/img/magnifier.png') center/cover no-repeat; /* Ruta a tu imagen */
+  border-radius: 50%; /* Hace que el contenedor sea circular */
+}
+
+.icono-imagen-izquierdo {
+  width: 30px; /* Ajusta el ancho según tus necesidades */
+  height: 30px; /* Ajusta la altura según tus necesidades */
+  
+  background: url('../../assets/img/up-arrow.png') center/cover no-repeat; /* Ruta a tu imagen */
+  border-radius: 50%; /* Hace que el contenedor sea circular */
 }

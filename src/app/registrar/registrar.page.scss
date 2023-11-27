@@ -1,3 +1,28 @@
+* {
+    --background: #ffffff; /* Cambia el color de fondo aquí */
+  }
+
+
+ion-header{
+    margin: 10px 10px 10px 1px;
+    position: absolute;
+
+    ion-title{
+        font-weight: bold;
+        color: black;
+    }
+    p{
+        color: black;
+        margin-left: 20px;
+        padding-right: 80px; 
+        font-size: 14px;
+    }
+}
+
+ion-label{
+    color: black;
+}
+
 ion-toolbar{
     --ion-background-color: transparent;
     --opacity:0;
@@ -9,9 +34,6 @@ h1{
     justify-content: center;
 }
 
-ion-header{
-    position: absolute;
-}
 
 .signin-btns{
     margin-top: 25px;
@@ -30,18 +52,53 @@ ion-header{
     span{
         font-size: 13px;
         font-weight: normal;
-        color: rgb(133, 132, 132);
+        color: rgb(255, 255, 255);
     }
 }
 
-ion-item{
-    ion-input{
-        color:#5b5c5c;
-    }
-}
 
 .border{
   border: 2px solid #007bff; /* Establece un borde sólido de 2 píxeles con un color azul (#007bff) */
   border-radius: 15px;
 }
+
+form{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.btn{
+    display: flex;
+    margin: 15px 1px 15px 10px; // arriba  derecha  abajo  izquieda
+    --background: rgb(95, 103, 212); 
+    width: 340px; /* Ajusta este valor al ancho deseado */
+    height: 60px;
+    padding: 8px 16px; /* Ajusta estos valores al padding deseado */
+    position: fixed;
+   
+}
+ion-item {
+    ion-label{
+        color: black;
+    }
+    ion-input {
+        color: black;
+    }
+  }
+  
+.border{
+  border: 1px solid rgb(161, 161, 161); /* Establece un borde sólido de 2 píxeles con un color azul (#007bff) */
+  border-radius: 15px;
+  margin: 10px 10px 10px 10px;
+  height: 60px; 
+}
+
+ion-item.has-value ion-label {
+    transform: translateY(-24px) scale(0.75); /* Ajusta según tus necesidades */
+  }
+  
+  
+
 

@@ -10,13 +10,27 @@
 
 }
 
-ion-img {
+.btn{
+    display: flex;
+    margin: 0px 1px 15px 10px; // arriba  derecha  abajo  izquieda
+    --background: rgb(95, 103, 212); 
+    width: 340px; /* Ajusta este valor al ancho deseado */
+    height: 60px;
+    padding: 8px 16px; /* Ajusta estos valores al padding deseado */
+    position: fixed;
+   
+}
 
-        width: 60px; /* ajusta según tus necesidades */
-        height: auto;
-        display: flex;
-        justify-content:center; //horizontal
-        align-items: center; //vertical
+ion-img {
+        width: 100px;
+        margin-left: 135px;
+        margin-top: 330px;
+}
+h1{
+    display: flex;
+    margin-left: 130px;
+    color: white;
+    font-size: 30px;
 }
 
 ion-content.fondohome {

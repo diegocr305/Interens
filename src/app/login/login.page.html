@@ -2,7 +2,8 @@
   
 </ion-header>
 <ion-content [fullscreen]="true">
-  <h1 class="text-tag">Hola,Bienvenido</h1>
+  <h1 class="tituloh1">Hola,</h1>
+  <h3 class="titulo2h2">Bienvenido!</h3>
   <ion-card-content>
       <div>
         <p>Email</p>
@@ -15,15 +16,15 @@
         </ion-item>
       </div>
       <div>
-          <ion-button style="text-align: center;" fill="clear" (click)="PagOlv()">¿Olvido su Contraseña?</ion-button>
+          <ion-button class="olvbtn" fill="clear" (click)="PagOlv()">¿Olvido su Contraseña?</ion-button>
       </div>
-      <div class="signin-btns">
-        <ion-button fill="solid" shape="round" class="loginbtn" (click)="Login(user)">Login</ion-button>
+      <div >
+        <ion-button class="btn" (click)="Login(user)">Login</ion-button>
       </div>
-      <div class="text-tag">
+      <div class="divspan">
         <span>_______________________</span>
       </div>
-      <div class="social-btns">
+      <div class="social-btns-google">
         <ion-button fill="clear" class="googlebtn ion-no-padding">
               <ion-img src="assets/img/google.png" alt=""></ion-img>
         </ion-button> 
@@ -31,7 +32,7 @@
             <ion-img src="assets/img/facebook.png" alt=""></ion-img>
         </ion-button> 
       </div>
-      <p style="text-align: center;">¿Aun no tiene cuenta?<a (click)="Registr()">Registrarse</a></p>
+      <p style="text-align: center;">¿Aun no tiene cuenta?<a (click)="Registr()" style="color: rgb(214, 141, 5);">Registrarse</a></p>
   </ion-card-content>
   
 </ion-content>
