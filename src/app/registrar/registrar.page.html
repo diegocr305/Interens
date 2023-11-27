@@ -6,27 +6,27 @@
 <ion-content>
   <form (ngSubmit)="validarRegistro(user)">
       <ion-item class="border"  [class.has-value]="user.rut">
-        <ion-label position="floating" class="">Rut</ion-label>
+        <ion-label style="margin-bottom: 1px;" position="floating" class="">Rut</ion-label>
         <ion-input type="text" [(ngModel)]="user.rut" name="rut" required></ion-input>
       </ion-item>
 
       <ion-item class="border" >
-        <ion-label position="floating">Nombre</ion-label>
+        <ion-label position="floating" style="margin-bottom: 1px;">Nombre</ion-label>
         <ion-input  type="text" [(ngModel)]="user.nombre" name="nombre" required></ion-input>
       </ion-item>
 
       <ion-item class="border">
-        <ion-label position="floating">Apellido Paterno</ion-label>
+        <ion-label position="floating" style="margin-bottom: 1px;">Apellido Paterno</ion-label>
         <ion-input type="text" [(ngModel)]="user.apellidopaterno" name="apellidopaterno" required></ion-input>
       </ion-item>
 
       <ion-item class="border">
-        <ion-label position="floating">Email</ion-label>
+        <ion-label position="floating" style="margin-bottom: 1px;">Email</ion-label>
         <ion-input type="email" [(ngModel)]="user.email" name="email" required></ion-input>
       </ion-item>
 
       <ion-item class="border">
-        <ion-label position="floating">Contraseña</ion-label>
+        <ion-label position="floating" style="margin-bottom: 1px;">Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="user.password" name="password" required></ion-input>
       </ion-item>
 
