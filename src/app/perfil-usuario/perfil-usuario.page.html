@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar> 
+    <ion-title></ion-title>
+    <ion-buttons style="color: black; margin-right: 10px;" slot="start">
+      <ion-back-button style="color: black" defaultHref="home" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" style="margin-left: 12px;">
+        <ion-icon (click)="home()" name="home" style="font-size: 3em;"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="saved">
+        <ion-icon name="bookmark" style="font-size: 3em;"></ion-icon>
+      </ion-tab-button>
+      <!-- Espacio en blanco -->
+      <ion-tab-button style="flex: 1;"></ion-tab-button>
+      <ion-tab-button tab="notifications">
+        <ion-icon name="notifications" style="font-size: 3em;"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="profile">
+        <ion-icon (click)="perfil()" name="person" style="font-size: 3em;"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  
+    <!-- ion-fab fuera de la barra de pestañas -->
+    <ion-fab vertical="bottom" horizontal="center">
+      <ion-fab-button color="primary" style="margin-bottom: 15px;">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-tabs>
+</ion-content>

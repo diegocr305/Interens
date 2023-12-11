@@ -10,9 +10,9 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class HomePage {
-  userInfo: any | undefined;
+  user_info: any | undefined;
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-    this.userInfo = this.router.getCurrentNavigation()?.extras.state?.['user'];
+    this.user_info = this.router.getCurrentNavigation()?.extras.state?.['user'];
   }
   
   goToProductosPage() {
@@ -21,6 +21,22 @@ export class HomePage {
   
 
   ngOnInit() {
-    console.log(this.userInfo);
+    console.log(this.user_info);
+  }
+
+  puntoLimpio(){
+    this.router.navigate(['/ubicacion']);
+  }
+  salir(){
+    this.router.navigate(['/login']);
+  }
+
+
+  home(){
+    this.router.navigate(['/*']);
+  }
+
+  perfil(){
+    this.router.navigate(['/perfil-usuario']);
   }
 }

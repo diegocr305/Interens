@@ -37,7 +37,7 @@ export class LoginPage implements OnInit {
     console.log(user_alumno);
     if (user_alumno) {
       console.log("Usuario existe...");
-      this.router.navigate(['/home'], { state: { userInfo: user_alumno}})
+      this.router.navigate(['/home'], { state: { user_info: user_alumno}})
     } else {
       //NO EXISTE
       console.log("Usuario no existe...");

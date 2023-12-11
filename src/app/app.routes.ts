@@ -45,6 +45,14 @@ export const routes: Routes = [
     path: 'info-carrucel',
     loadComponent: () => import('./info-carrucel/info-carrucel.page').then( m => m.InfoCarrucelPage)
   },
+  {
+    path: 'ubicacion',
+    loadComponent: () => import('./ubicacion/ubicacion.page').then( m => m.UbicacionPage)
+  },
+  {
+    path: 'perfil-usuario',
+    loadComponent: () => import('./perfil-usuario/perfil-usuario.page').then( m => m.PerfilUsuarioPage)
+  },
 
 
 

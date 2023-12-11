@@ -1,21 +1,85 @@
-<ion-content>
-  <div>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title style="color: black">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button fill="clear" (click)="puntoLimpio()">
+      Punto limpio
+    </ion-button>
+    <ion-button fill="clear" (click)="salir()">
+      Cerrar sesión
+    </ion-button>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons style="color: black;" slot="start">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div style="display: flex;
+      justify-content: center;
+      align-items: center;">
       <ion-img class="imge" src="assets/img/old3.png"></ion-img>
-  </div>
-  <ion-card-content>
-    <div class="social-btns">
-      <ion-img style="width: 140px;margin-left: 100px;" src="assets/img/inter.png" alt=""></ion-img>
-      <h1>¿Qué hacemos hoy?</h1>
-      <p style="color: rgb(15, 74, 202);font-weight: bold;">Encuentra, publica y conecta.</p>
-      <p>Descubre objetos cerca de ti para una segunda vida</p>
     </div>
-    <div class="signin-btns" style="display: flex;">
-      <ion-button class="boton-circular" shape="round" >
-        <div class="icono-imagen-izquierdo"></div>
-      </ion-button>
-      <ion-button class="boton-circular" shape="round" expand="full" (click)="goToProductosPage()">
-        <div class="icono-imagen-derecho"></div>
-      </ion-button>
-    </div>
-  </ion-card-content>
-</ion-content>
+    <ion-card-content>
+      <div class="social-btns">
+        <div style="display: flex;
+          justify-content: center;
+          align-items: center;">
+          <ion-img style="width: 140px;" src="assets/img/inter.png" alt=""></ion-img>
+        </div>
+        <h1><strong>¿Qué hacemos hoy?</strong></h1>
+        <p style="color: rgb(15, 74, 202);font-weight: bold;">Encuentra, publica y conecta.</p>
+        <p>Descubre objetos cerca de ti para una segunda vida</p>
+      </div>
+      <!-- Botones -->
+      <div class="signin-btns" style="display: flex; z-index: 2; position: relative;">
+        <ion-button class="boton-circular" shape="round" >
+          <div class="icono-imagen-izquierdo"></div>
+        </ion-button>
+        <ion-button class="boton-circular" shape="round" expand="full" (click)="goToProductosPage()">
+          <div class="icono-imagen-derecho"></div>
+        </ion-button>
+      </div>
+
+      <div style="display: flex;justify-content: center;
+        align-items: center;">
+        <h1 style="margin-right: 70px;"><strong>Subir</strong></h1>
+        <h1 style="margin-left: 40px;"><strong>Buscar</strong></h1>
+      </div>
+    </ion-card-content>
+     <!-- Barra de pestañas -->
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home" style="margin-left: 12px;">
+          <ion-icon (click)="home()" name="home" style="font-size: 3em;"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="saved">
+          <ion-icon name="bookmark" style="font-size: 3em;"></ion-icon>
+        </ion-tab-button>
+        <!-- Espacio en blanco -->
+        <ion-tab-button style="flex: 1;"></ion-tab-button>
+        <ion-tab-button tab="notifications">
+          <ion-icon name="notifications" style="font-size: 3em;"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="profile">
+          <ion-icon (click)="perfil()" name="person" style="font-size: 3em;"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+      <!-- ion-fab fuera de la barra de pestañas -->
+      <ion-fab vertical="bottom" horizontal="center">
+        <ion-fab-button color="primary" style="margin-bottom: 15px;">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-tabs>
+  </ion-content>
+</div>

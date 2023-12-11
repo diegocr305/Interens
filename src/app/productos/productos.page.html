@@ -1,7 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Productos Disponibles</ion-title>
+  <ion-toolbar> 
+    <ion-title>Productos</ion-title>
+    <ion-buttons style="color: black;" slot="start">
+      <ion-back-button defaulthref="login" text=""></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>
@@ -13,14 +17,14 @@
       <ion-card-subtitle>{{ product.descripcion }}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
+      <ion-list style="background: white;">
         <ion-item>
           <!-- You might need a dynamic way to set the image source. For now, I'm using a placeholder -->
           <ion-thumbnail slot="start">
             <img [src]="product.imagenSrc" alt="{{ product.nombre }}" />
 
           </ion-thumbnail>
-          <ion-label>
+          <ion-label style="color: black;">
             Precio: {{ product.precio | currency:'USD':true }}
             <br>
             Stock: {{ product.stock }}
